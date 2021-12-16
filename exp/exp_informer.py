@@ -96,7 +96,6 @@ class Exp_Informer(Exp_Basic):
         print(data_set.timeenc)
         print(data_set.features)
         print(data_set.freq)
-        print(data_set.cols)
         print(data_set.target)
         print(data_set.data_stamp)
         print(data_set.scale)
