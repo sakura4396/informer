@@ -93,7 +93,7 @@ class Exp_Informer(Exp_Basic):
             freq=freq,
             cols=args.cols
         )
-        print(Data.timeenc)
+        print(dir(Data))
         print(Data.features)
         print(Data.freq)
         print(Data.cols)
