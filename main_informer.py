@@ -28,7 +28,7 @@ parser.add_argument('--pred_len', type=int, default=24, help='prediction sequenc
 
 parser.add_argument('--enc_in', type=int, default=7, help='encoder input size')
 parser.add_argument('--dec_in', type=int, default=7, help='decoder input size')
-parser.add_argument('--c_out', type=int, default=7, help='output size')
+parser.add_argument('--c_out', type=int, default=1, help='output size')
 parser.add_argument('--d_model', type=int, default=512, help='dimension of model')
 parser.add_argument('--n_heads', type=int, default=8, help='num of heads')
 parser.add_argument('--e_layers', type=int, default=2, help='num of encoder layers')
@@ -77,13 +77,7 @@ if args.use_gpu and args.use_multi_gpu:
     args.gpu = args.device_ids[0]
 
 data_parser = {
-    'ETTh1': {'data': 'ETTh1.csv', 'T': 'OT', 'M': [7, 7, 7], 'S': [1, 1, 1], 'MS': [7, 7, 1]},
-    'ETTh2': {'data': 'ETTh2.csv', 'T': 'OT', 'M': [7, 7, 7], 'S': [1, 1, 1], 'MS': [7, 7, 1]},
-    'ETTm1': {'data': 'ETTm1.csv', 'T': 'OT', 'M': [7, 7, 7], 'S': [1, 1, 1], 'MS': [7, 7, 1]},
-    'ETTm2': {'data': 'ETTm2.csv', 'T': 'OT', 'M': [7, 7, 7], 'S': [1, 1, 1], 'MS': [7, 7, 1]},
-    'WTH': {'data': 'WTH.csv', 'T': 'WetBulbCelsius', 'M': [12, 12, 12], 'S': [1, 1, 1], 'MS': [12, 12, 1]},
-    'ECL': {'data': 'ECL.csv', 'T': 'MT_320', 'M': [321, 321, 321], 'S': [1, 1, 1], 'MS': [321, 321, 1]},
-    'Solar': {'data': 'solar_AL.csv', 'T': 'POWER_136', 'M': [137, 137, 137], 'S': [1, 1, 1], 'MS': [137, 137, 1]},
+    'monitor':{'data': 'ETTh1.csv', 'T': 'OT', 'M': [7, 7, 7], 'S': [1, 1, 1], 'MS': [7, 7, 1]},
 }
 if args.data in data_parser.keys():
     data_info = data_parser[args.data]
