@@ -92,7 +92,8 @@ class Exp_Informer(Exp_Basic):
             freq=freq,
             cols=args.cols
         )
-        print(data_set)
+        print('path'+args.root_path+','+args.data_path)
+        print(args.seq_len+args.label_len+args.pred_len)
         print(flag, len(data_set))
         data_loader = DataLoader(
             data_set,
