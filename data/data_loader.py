@@ -55,11 +55,13 @@ class Dataset_ETT_hour(Dataset):
         border2s = [num_train, num_train+num_vali, len(df_raw)]
         border1 = border1s[self.set_type]
         border2 = border2s[self.set_type]
+        '''
         print('border')
         print(border1)
         print(border1s)
         print(border2)
         print(border2s)
+        '''
         if self.features=='M' or self.features=='MS':
             cols_data = df_raw.columns[1:]
             df_data = df_raw[cols_data]
