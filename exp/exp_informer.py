@@ -93,7 +93,7 @@ class Exp_Informer(Exp_Basic):
             freq=freq,
             cols=args.cols
         )
-        print(Data=={})
+        print(Data.size)
         print(flag, len(data_set))
         data_loader = DataLoader(
             data_set,
