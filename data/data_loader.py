@@ -406,7 +406,9 @@ class Dataset_Pred(Dataset):
         
         border1 = len(df_raw)-self.seq_len
         border2 = len(df_raw)
-        
+        print('border')
+        print(border1)
+        print(border2)
         if self.features=='M' or self.features=='MS':
             cols_data = df_raw.columns[1:]
             df_data = df_raw[cols_data]
