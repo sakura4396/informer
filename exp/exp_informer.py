@@ -93,8 +93,18 @@ class Exp_Informer(Exp_Basic):
             freq=freq,
             cols=args.cols
         )
-        print(type(data_set))
-        print(dir(data_set))
+        print(data_set.timeenc)
+        print(data_set.features)
+        print(data_set.freq)
+        print(data_set.cols)
+        print(data_set.target)
+        print(data_set.data_stamp)
+        print(data_set.scale)
+        print(data_set.data_x)
+        print(data_set.data_y)
+        print(data_set.seq_len)
+        print(data_set.pred_len)
+        print(data_set.scaler)
         print(flag, len(data_set))
         data_loader = DataLoader(
             data_set,
