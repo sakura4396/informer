@@ -52,7 +52,11 @@ class Dataset_ETT_hour(Dataset):
         border2s = [12*30*24, 12*30*24+4*30*24, 12*30*24+8*30*24]
         border1 = border1s[self.set_type]
         border2 = border2s[self.set_type]
-        
+        print('border')
+        print(border1)
+        print(border1s)
+        print(border2)
+        print(border2s)
         if self.features=='M' or self.features=='MS':
             cols_data = df_raw.columns[1:]
             df_data = df_raw[cols_data]
@@ -69,7 +73,8 @@ class Dataset_ETT_hour(Dataset):
         df_stamp = df_raw[['date']][border1:border2]
         df_stamp['date'] = pd.to_datetime(df_stamp.date)
         data_stamp = time_features(df_stamp, timeenc=self.timeenc, freq=self.freq)
-
+        print('stamp')
+        print(df_stamp)
         self.data_x = data[border1:border2]
         if self.inverse:
             self.data_y = df_data.values[border1:border2]
@@ -406,9 +411,7 @@ class Dataset_Pred(Dataset):
         
         border1 = len(df_raw)-self.seq_len
         border2 = len(df_raw)
-        print('border')
-        print(border1)
-        print(border2)
+        
         if self.features=='M' or self.features=='MS':
             cols_data = df_raw.columns[1:]
             df_data = df_raw[cols_data]

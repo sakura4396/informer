@@ -94,11 +94,11 @@ class Exp_Informer(Exp_Basic):
             cols=args.cols
         )
         print('data_set.data_stamp:')
-        print(data_set.data_stamp)
+        print(len(data_set.data_stamp))
         print('data_set.data_x')
-        print(data_set.data_x)
+        print(len(data_set.data_x))
         print('data_set.data_y')
-        print(data_set.data_y)
+        print(len(data_set.data_y))
         print(flag, len(data_set))
         data_loader = DataLoader(
             data_set,
