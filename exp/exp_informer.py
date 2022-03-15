@@ -219,6 +219,7 @@ class Exp_Informer(Exp_Basic):
             preds.append(pred.detach().cpu().numpy())
             trues.append(true.detach().cpu().numpy())
 
+        print('执行到这里了')
         preds = np.array(preds)
         trues = np.array(trues)
         print('test',preds)
