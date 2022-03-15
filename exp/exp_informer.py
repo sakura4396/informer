@@ -93,14 +93,14 @@ class Exp_Informer(Exp_Basic):
             freq=freq,
             cols=args.cols
         )
-        '''
+        
         print('data_set.data_stamp:')
         print(len(data_set.data_stamp))
         print('data_set.data_x')
         print(len(data_set.data_x))
         print('data_set.data_y')
         print(len(data_set.data_y))
-        '''
+        
         print(flag, len(data_set))
         
         data_loader = DataLoader(
