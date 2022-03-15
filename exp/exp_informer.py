@@ -138,12 +138,6 @@ class Exp_Informer(Exp_Basic):
         train_data, train_loader = self._get_data(flag = 'train')
         vali_data, vali_loader = self._get_data(flag = 'val')
         test_data, test_loader = self._get_data(flag = 'test')
-        print('train_data')
-        print(train_data)
-        print('vali_data')
-        print(vali_data)
-        print('test_data')
-        print(test_data)
 
         path = os.path.join(self.args.checkpoints, setting)
         if not os.path.exists(path):
@@ -168,7 +162,7 @@ class Exp_Informer(Exp_Basic):
             epoch_time = time.time()
             for i, (batch_x,batch_y,batch_x_mark,batch_y_mark) in enumerate(train_loader):
                 iter_count += 1
-                
+                print(i, batch_x, batch_y, batch_x_mark, batch_y_mark)
                 model_optim.zero_grad()
                 pred, true = self._process_one_batch(
                     train_data, batch_x, batch_y, batch_x_mark, batch_y_mark)
