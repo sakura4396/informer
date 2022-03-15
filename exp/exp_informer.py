@@ -94,12 +94,14 @@ class Exp_Informer(Exp_Basic):
             cols=args.cols
         )
         
+        '''
         print('data_set.data_stamp:')
         print(len(data_set.data_stamp))
         print('data_set.data_x')
         print(len(data_set.data_x))
         print('data_set.data_y')
         print(len(data_set.data_y))
+        '''
         
         print(flag, len(data_set))
         
@@ -136,7 +138,6 @@ class Exp_Informer(Exp_Basic):
         train_data, train_loader = self._get_data(flag = 'train')
         vali_data, vali_loader = self._get_data(flag = 'val')
         test_data, test_loader = self._get_data(flag = 'test')
-        print('test_data',test_data);
 
         path = os.path.join(self.args.checkpoints, setting)
         if not os.path.exists(path):
@@ -205,14 +206,15 @@ class Exp_Informer(Exp_Basic):
 
     def test(self, setting):
         test_data, test_loader = self._get_data(flag='test')
+        print('test_data:',test_data)
         
         self.model.eval()
         
         preds = []
         trues = []
-        print('test_data',test_data)
-        print('test_loader',test_loader)
+        
         for i, (batch_x,batch_y,batch_x_mark,batch_y_mark) in enumerate(test_loader):
+            print(i, batch_x, batch_y, batch_x_mark, batch_y_mark)
             pred, true = self._process_one_batch(
                 test_data, batch_x, batch_y, batch_x_mark, batch_y_mark)
             print('true',pred)
