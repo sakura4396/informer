@@ -205,7 +205,6 @@ class Exp_Informer(Exp_Basic):
 
     def test(self, setting):
         test_data, test_loader = self._get_data(flag='test')
-        print('test_data:',test_data)
         
         self.model.eval()
         
@@ -215,8 +214,6 @@ class Exp_Informer(Exp_Basic):
         for i, (batch_x,batch_y,batch_x_mark,batch_y_mark) in enumerate(test_loader):
             pred, true = self._process_one_batch(
                 test_data, batch_x, batch_y, batch_x_mark, batch_y_mark)
-            print('true',pred)
-            print('true',true)
             preds.append(pred.detach().cpu().numpy())
             trues.append(true.detach().cpu().numpy())
 
