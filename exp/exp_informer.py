@@ -210,6 +210,7 @@ class Exp_Informer(Exp_Basic):
         preds = []
         trues = []
         print('test_data',test_data)
+        print('test_loader',test_loader)
         for i, (batch_x,batch_y,batch_x_mark,batch_y_mark) in enumerate(test_loader):
             pred, true = self._process_one_batch(
                 test_data, batch_x, batch_y, batch_x_mark, batch_y_mark)
