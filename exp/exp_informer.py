@@ -213,13 +213,14 @@ class Exp_Informer(Exp_Basic):
         for i, (batch_x,batch_y,batch_x_mark,batch_y_mark) in enumerate(test_loader):
             pred, true = self._process_one_batch(
                 test_data, batch_x, batch_y, batch_x_mark, batch_y_mark)
+            print('true',pred)
+            print('true',true)
             preds.append(pred.detach().cpu().numpy())
             trues.append(true.detach().cpu().numpy())
 
         preds = np.array(preds)
         trues = np.array(trues)
         print('test',preds)
-        print('test',trues)
         print('test shape:', preds.shape, trues.shape)
         preds = preds.reshape(-1, preds.shape[-2], preds.shape[-1])
         trues = trues.reshape(-1, trues.shape[-2], trues.shape[-1])
